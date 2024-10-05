@@ -39,6 +39,7 @@ function sumArray(array) {
   }
 }
 
+
 console.log(sumArray(null)) //0 
 console.log(sumArray([ ])) //0 
 console.log(sumArray([ 3 ])) //0 
