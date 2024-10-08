@@ -13,5 +13,5 @@
 // Note: keep the original order of the names in the output.
 
 function friend(friends){
-    return friends.filter(e => e.split('').length === 4)
+    return friends.filter(e => e.length === 4)
 }
