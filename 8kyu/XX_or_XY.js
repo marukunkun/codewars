@@ -11,9 +11,15 @@
 // If the sperm contains the X chromosome, return "Congratulations! You're going to have a daughter."
 // If the sperm contains the Y chromosome, return "Congratulations! You're going to have a son."
 
+// Solution 1
 function chromosomeCheck(sperm) {
- 	 return sperm.includes('Y') ? "Congratulations! You're going to have a son." :  "Congratulations! You're going to have a daughter."
+ 	return sperm.includes('Y') ? "Congratulations! You're going to have a son." :  "Congratulations! You're going to have a daughter."
 }
+
+// Solution 2
+function chromosomeCheck(sperm) {
+	return `Congratulations! You're going to have a ${sperm === 'XY' ? 'son' : 'daughter'}.`
+  }
 
 console.log(chromosomeCheck('XY')) // "Congratulations! You're going to have a son."
 console.log(chromosomeCheck('XX')) // "Congratulations! You're going to have a daughter."
