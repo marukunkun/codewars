@@ -13,11 +13,15 @@
 
 // The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
 
+// Solution 1
 function number(busStops) {
     const enter = busStops.reduce((a,c) => a + c[0], 0)
     const leave = busStops.reduce((a,c) => a + c[1], 0)
     return enter - leave
 }
+
+// Solution 2
+const number = busStops => busStops.reduce((people, stop) => people + stop[0] - stop[1], 0)
 
 console.log(number([[10,0],[3,5],[5,8]])) // 5
 console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]])) // 17
