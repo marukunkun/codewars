@@ -7,6 +7,7 @@
 
 // You can assume that all inputs are valid integers.
 
+// Solution 1
 function roundToNext5(n){
     if(n % 5 === 0) {
         return n
@@ -16,6 +17,12 @@ function roundToNext5(n){
       }
       return n
     }
+}
+
+// Solution 2
+function roundToNext5(n){
+    while(n % 5 !== 0) n++
+    return n
 }
 
 console.log(roundToNext5(0)) // 0
