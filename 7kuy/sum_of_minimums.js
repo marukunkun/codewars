@@ -10,8 +10,14 @@
 
 // Note: You will always be given a non-empty list containing positive values.
 
+// Solution 1
 function sumOfMinimums(arr) {
     return arr.map(e => Math.min(...e)).reduce((acc, curr) => acc + curr)
+}
+
+// Solution 2
+function sumOfMinimums(arr) {
+    return arr.reduce((p, c) => p + Math.min(...c), 0);
 }
 
 console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]])) // 9
