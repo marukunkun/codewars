@@ -15,6 +15,8 @@
 // All inputs will be in the correct format.
 // Strings on tickets are not always the same length.
 
+
+// Solution 1
 function bingo(ticket, win) {
   let miniWins = 0
   
@@ -29,6 +31,14 @@ function bingo(ticket, win) {
     }
   }
   return miniWins >= win ? 'Winner!' : 'Loser!'
+}
+
+// Solution 2
+function bingo(ticket, win){
+  if(ticket.filter(a => a[0].split('').some(b => b.charCodeAt(0) == a[1])).length >= win) {
+    return "Winner!"
+  }
+  return "Loser!"
 }
 
 // console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 2)) // 'Loser!'
