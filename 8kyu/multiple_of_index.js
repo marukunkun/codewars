@@ -1,9 +1,15 @@
 // Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
 
+// Solution 1
 function multipleOfIndex(array) {
     let result = []
     array.forEach((e, i) => e % i === 0 || e === 0 ? result.push(e) : e)
     return result
+}
+
+// Solution 2
+function multipleOfIndex(array) {
+    return array.filter((e,i) => e === 0 || e % i === 0)
 }
 
 console.log(multipleOfIndex([22, -6, 32, 82, 9, 25])) // [-6, 32, 25]
