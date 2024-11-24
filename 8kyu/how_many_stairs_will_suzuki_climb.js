@@ -47,9 +47,14 @@ let saturday = [5448, 8041, 6573, 8104, 6208, 5912, 7927, 8909, 7000, 5059, 6412
 
 let stairs = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
 
-
+// Solution 1
 function stairsIn20(s){
     return s.map(e => e.reduce((a,b) => a + b, 0)).reduce((a,b) => a + b, 0) * 20
+}
+
+// Solution 2
+function stairsIn20(s){
+	return s.flat().reduce((a,b) => a + b, 0) * 20
 }
 
 console.log(stairsIn20(stairs)) // 54636040
