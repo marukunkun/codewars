@@ -5,6 +5,7 @@
 // Given a string showing either flat road (_) or bumps (n).
 // If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead.
 
+// Solution 1
 function bump(x) {
 	let count = 0
   
@@ -14,6 +15,11 @@ function bump(x) {
         }
     }
   return count > 15 ? "Car Dead" : "Woohoo!"
+}
+
+// Solution 2
+function bump(x) {
+  return x.split('').filter(e => e === 'n').length > 15 ? "Car Dead" : "Woohoo!"
 }
 
 console.log(bump("n")) // "Woohoo!"
