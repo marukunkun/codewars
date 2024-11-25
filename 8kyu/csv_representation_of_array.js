@@ -19,6 +19,7 @@
 
 // Note: you shouldn't escape the \n, it should work as a new line.
 
+// Solution 1
 function toCsvText(array) {
 	let result = ''
 	for(let i = 0; i < array.length; i++) {
@@ -30,6 +31,11 @@ function toCsvText(array) {
    	
   }
   return result
+}
+
+// Solution 2 (way easier lol)
+function toCsvText(array) {
+  return array.join('\n')
 }
 
 console.log(toCsvText([[ 0, 1, 2, 3, 45 ],
