@@ -1,5 +1,6 @@
 // Given two arrays of strings a1 and a2 return a sorted array r in lexicographical order of the strings of a1 which are substrings of strings of a2.
 
+// Solution 1
 function inArray(arr1,arr2){
 	let result = []
   
@@ -11,6 +12,12 @@ function inArray(arr1,arr2){
     }
   }
   return result.filter((e,i) => result.indexOf(e) === i).sort()
+}
+
+// Solution 2
+function inArray(a1, a2) {
+	let str = a2.join(' ')
+	return a1.filter(e => str.indexOf(e) !== -1).sort()
 }
 
 let arr2 = ["lively", "alive", "harp", "sharp", "armstrong"]
