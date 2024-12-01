@@ -7,6 +7,7 @@
 
 // Input will consist of alphabet characters, both uppercase and lowercase. No spaces.
 
+// Solution 1
 function solve(arr) {
 	arr = arr.map(e => e.toLowerCase())
   
@@ -22,6 +23,12 @@ function solve(arr) {
     result.push(count)
   }
   return result
+}
+
+// Solution 2
+function solve(arr){  
+	const alphabeth = "abcdefghijklmnopqrstuvwxyz"
+	return arr.map(x => x.toLowerCase().split('').filter((y,i) => i === alphabeth.indexOf(y)).length)
 }
 
 console.log(solve(["abode","ABc","xyzD"])) // [4,3,1]
