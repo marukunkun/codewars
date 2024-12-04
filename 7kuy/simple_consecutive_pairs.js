@@ -9,22 +9,31 @@
 // --the fourth pair is (7,6), also consecutive. Count = 3. 
 // --the last digit has no pair, so we ignore.
 
+// Solution 1
 function pairs(arr) {
 	arr = arr.length % 2 === 0 ? arr : arr.slice(0, -1)
   
 	let list = []
-    for(let i = 0; i < arr.length; i += 2) {
-  	    list.push(arr.slice(i, i+2))
-    }
+  for(let i = 0; i < arr.length; i += 2) {
+  	list.push(arr.slice(i, i+2))
+  }
   
-    let count = 0
-    for(let i = 0; i < list.length; i++) {
-  	    for(let j = 1; j < list[i].length; j++) {	
-            if(list[i][j-1] === list[i][j]+1 || list[i][j-1] === list[i][j]-1) {
-      	        count++
-            }
-        }
-    }
+  let count = 0
+  for(let i = 0; i < list.length; i++) {
+  	  for(let j = 1; j < list[i].length; j++) {	
+          if(list[i][j-1] === list[i][j]+1 || list[i][j-1] === list[i][j]-1) {
+      	      count++
+          }
+      }
+  }
+  return count
+}
+
+// Solution 2
+function pairs(array, count = 0) {
+  for (let i = 0; i < array.length; i += 2)
+    if (Math.abs(array[i] - array[i + 1]) === 1)
+      count += 1
   return count
 }
 
