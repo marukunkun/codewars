@@ -12,6 +12,8 @@
 // A list may contain multiple flicks.
 // Switch the boolean value on the same element as the flick itself.
 
+
+// Solution 1
 function flickSwitch(arr) {
   let result = []
   let trueOrFalse = true
@@ -28,6 +30,13 @@ function flickSwitch(arr) {
     }
   }
   return result
+}
+
+// Solution 2
+function flickSwitch(arr){
+  let flick = true
+  
+  return arr.map(item => item === 'flick' ? flick = !flick : flick)
 }
 
 console.log(flickSwitch(["codewars", "flick", "code", "wars"])) // [true, false, false, false]
