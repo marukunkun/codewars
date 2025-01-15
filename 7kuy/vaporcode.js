@@ -3,6 +3,12 @@
 
 // Note that spaces should be ignored in this case.
 
+// Solution 1
+function vaporcode(str) {
+	return str.toUpperCase().split(" ").join("").split("").join("  ")
+}
+
+// Solution 2
 function vaporcode(str) {
 	str = str.replaceAll(' ', '')
 	let vaporwave = ''
