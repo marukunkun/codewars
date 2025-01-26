@@ -18,6 +18,7 @@
 // to keep this a beginner exercise you don't need to check if the greeting is a subset of word (Hallowen can pass the test)
 // function should be case insensitive to pass the tests
 
+// Solution 1
 function validateHello(greetings) {
     const hello = ['hello', 'ciao', 'salut', 'hallo', 'hola', 'ahoj', 'czesc']
     greetings = greetings.toLowerCase()
@@ -33,6 +34,25 @@ function validateHello(greetings) {
     return false
     }
 }
+
+// Solution 2 (using regex)
+function validateHello(greetings) {
+    return /(ahoj|ciao|czesc|h[ae]llo|hola|salut)/i.test(greetings)
+}
+
+// Solution 3
+function validateHello(greetings) {
+    const messages = ["hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"]
+    const lowerCaseGreetings = greetings.toLowerCase()
+  
+    for (let i = 0; i < messages.length; i++) {
+        if (lowerCaseGreetings.includes(messages[i])) {
+            return true
+        }
+    }
+    return false
+}
+
 console.log(validateHello('ahohello')) // true
 console.log(validateHello('ahoj')) // true
 console.log(validateHello('meh')) // false
